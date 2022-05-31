@@ -1,1 +1,34 @@
-<p>basics works!</p>
+<div class="text-layout">
+    <h1>Basics Pipes</h1>
+    <p>
+        Pipes includes in Angular - usually are in the common module
+    </p>
+</div>
+
+<div class="grid">
+    <div class="col-4">
+        <p-card header="uppercase"
+                [subheader]="nameLower">
+            {{ nameLower | uppercase }}
+        </p-card>
+    </div>
+    <div class="col-4">
+        <p-card header="lowerCase"
+                [subheader]="nameUpper">
+            {{ nameLower | lowercase }}
+        </p-card>
+    </div>
+    <div class="col-4">
+        <p-card header="titleCase"
+                [subheader]="completeName">
+            {{ completeName | titlecase }}
+        </p-card>
+    </div>
+</div>
+
+<div class="text-layout">
+    <h1>Date | Pipe</h1>
+    <p>
+        Pipe to show dates
+    </p>
+</div>
