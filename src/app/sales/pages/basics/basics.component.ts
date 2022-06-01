@@ -12,4 +12,6 @@ export class BasicsComponent {
   nameUpper: string = 'ANDRES';
   completeName: string = 'AndReS RiVeRA';
 
+  actualDate: Date = new Date();
+
 }
