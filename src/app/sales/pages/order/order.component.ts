@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Color, Heroe } from '../../interfaces/sales.interface';
 
 @Component({
   selector: 'app-order',
@@ -6,11 +7,46 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class OrderComponent implements OnInit {
+export class OrderComponent   {
 
-  constructor() { }
+  isMajus:boolean = false;
+  heroes: Heroe[] = [
+    {
+      name: 'Superman',
+      flying: true,
+      color: Color.blue
+    },
+    {
+      name: 'Batman',
+      flying: false,
+      color: Color.black
+    },
+    {
+      name: 'Robin',
+      flying: false,
+      color: Color.green
+    },
+    {
+      name: 'Daredevil',
+      flying: false,
+      color: Color.red
+    },
+    {
+      name: 'Green lantern',
+      flying: true,
+      color: Color.green
+    },
+  ]
 
-  ngOnInit(): void {
+  orderBy: string = '';
+  
+  changeMajus(){
+    this.isMajus = !this.isMajus;
   }
+
+  changeOrder( value: string ){
+    this.orderBy = value;
+  }
+
 
 }

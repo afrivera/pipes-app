@@ -8,6 +8,9 @@ import { NumbersComponent } from './pages/numbers/numbers.component';
 import { NoCommonsComponent } from './pages/no-commons/no-commons.component';
 import { BasicsComponent } from './pages/basics/basics.component';
 import { OrderComponent } from './pages/order/order.component';
+import { MajusculePipe } from './pipes/majuscule.pipe';
+import { FlyPipe } from './pipes/fly.pipe';
+import { OrderPipe } from './pipes/order.pipe';
 
 
 
@@ -16,7 +19,11 @@ import { OrderComponent } from './pages/order/order.component';
     NumbersComponent,
     NoCommonsComponent,
     BasicsComponent,
-    OrderComponent
+    OrderComponent,
+    
+    FlyPipe,
+    MajusculePipe,
+    OrderPipe,
   ],
   exports: [
     NumbersComponent,

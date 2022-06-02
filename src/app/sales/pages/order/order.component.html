@@ -1,1 +1,85 @@
-<p>order works!</p>
+<div class="text-layout">
+    <h1>pipes personalized</h1>
+    <p>
+        pipes create for {{ 'us' | majuscule : isMajus }}
+    </p>
+
+</div>
+
+<p-toolbar>
+    <div class="p-toolbar-group-left">
+
+    </div>
+    
+    <div class="p-toolbar-group-right">
+
+        
+        <button pButton 
+            label="Toggle Majus"
+            class="p-button-danger mr-1"
+            (click)="changeMajus()"
+        >
+        </button>
+        <button pButton
+                icon="pi pi-sort"
+                label="By Name" 
+                (click)="changeOrder( 'name' )"
+                class="mr-1"></button>
+                
+        <button pButton
+                icon="pi pi-sort"
+                label="Flying" 
+                (click)="changeOrder( 'fly' )"
+                class="mr-1 p-button-success"></button>
+        
+                
+        <button pButton
+                icon="pi pi-sort"
+                label="By Color" 
+                (click)="changeOrder( 'color' )"
+                class="mr-1 p-button-help"></button>
+        
+    </div>
+</p-toolbar>
+
+<div class="grid">
+    <div class="col mt-2">
+        <p-table [value]="heroes | order : orderBy ">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Name</th>
+                    <th>Flying</th>
+                    <th>Color</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-heroe>
+                <tr >
+                    <td>{{heroe.name}}</td>
+                    <td>{{heroe.flying | fly | titlecase }}</td>
+                    <td>{{heroe.color}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
+
+<div class="grid">
+    <div class="col mt-2">
+        <p-table [value]="heroes | slice: 0">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+                    <th pSortableColumn="flying">Flying <p-sortIcon field="flying"></p-sortIcon></th>
+                    <th pSortableColumn="color">Color <p-sortIcon field="color"></p-sortIcon></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-heroe>
+                <tr >
+                    <td>{{heroe.name}}</td>
+                    <td>{{heroe.flying | fly | titlecase }}</td>
+                    <td>{{heroe.color}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
